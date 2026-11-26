@@ -1,0 +1,44 @@
+.factory-login { min-height:100dvh; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(400px,1fr); background:#f7fafb; color:#18383e; }
+.factory-login-hero { padding:40px clamp(28px,4.8vw,88px) 28px; background:radial-gradient(ellipse at 80% 15%,#187e7f77,transparent 55%),linear-gradient(145deg,#073d45,#075e63 70%,#087b7d); color:#fff; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+.factory-login-hero::before { content:"";position:absolute;inset:0;opacity:.055;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:48px 48px;pointer-events:none; }
+.factory-brand,.factory-hero-content,.factory-hero-footer { position:relative;z-index:1; }
+.factory-brand { display:flex;align-items:center;gap:12px;font-size:16px;font-weight:700;letter-spacing:1.4px; }
+.factory-brand-icon { width:48px;height:48px;display:grid;place-items:center;border:1px solid #ffffff40;border-radius:13px;background:#ffffff0c; }
+.factory-brand small { display:block;font-size:9px;letter-spacing:1.7px;font-weight:400;opacity:.62;margin-top:5px; }
+.factory-hero-content { margin:auto 0;padding:48px 0 36px;max-width:620px; }
+.factory-eyebrow { display:flex;align-items:center;gap:9px;font-size:10px;font-weight:600;letter-spacing:1.6px;color:#9be7dc; }
+.factory-eyebrow>span,.factory-live-dot { width:6px;height:6px;border-radius:50%;background:#8cf0ce;box-shadow:0 0 0 4px #8cf0ce16; }
+.factory-hero-content h1 { font-size:clamp(32px,3.5vw,54px);font-weight:650;line-height:1.22;letter-spacing:-1.5px;margin:22px 0 20px; }
+.factory-hero-content h1 em { font-style:normal;color:#8ce3d5; }
+.factory-hero-content>p { color:#c5dfe0;font-size:15px;line-height:1.8;max-width:440px; }
+.factory-visual { margin-top:30px;border:1px solid #ffffff24;border-radius:16px;background:linear-gradient(135deg,#ffffff0d,#ffffff03);box-shadow:0 20px 50px #002f3930;overflow:hidden; }
+.factory-visual-top { display:flex;justify-content:space-between;align-items:center;padding:15px 20px;color:#b8dedb;font-size:9px;letter-spacing:1.3px; }
+.factory-visual-top>span:first-child { display:flex;align-items:center;gap:8px; }
+.factory-scene { width:100%;height:auto;max-height:190px;display:block; }
+.factory-flow { display:flex;align-items:center;justify-content:space-around;gap:8px;padding:18px 14px;border-top:1px solid #ffffff14;color:#b6e0dd; }
+.factory-flow>span { display:flex;align-items:center;gap:8px;font-size:12px; }
+.factory-flow>svg { opacity:.45; }
+.factory-hero-footer { display:flex;justify-content:space-between;gap:16px;font-size:9px;letter-spacing:1px;color:#acd3d0; }
+.factory-login-panel { display:flex;flex-direction:column;justify-content:center;padding:56px clamp(28px,5vw,90px) 24px;background:radial-gradient(ellipse at top right,#e9f5f3,transparent 45%),#fff; }
+.factory-form-wrap { width:100%;max-width:420px;margin:auto; }
+.factory-form-mark { display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:#e8f6f5;color:#079095;margin-bottom:28px; }
+.factory-form-eyebrow { font-size:10px;letter-spacing:2px;color:#079095;font-weight:650; }
+.factory-form-wrap h2 { font-size:clamp(23px,2.1vw,31px);font-weight:650;line-height:1.35;letter-spacing:-.7px;margin:12px 0; }
+.factory-form-wrap h2>span { color:#079095; }
+.factory-form-description { font-size:13px;line-height:1.7;color:#7a8d91;margin-bottom:32px; }
+.factory-login .ant-form-item-label>label { font-weight:550;font-size:13px;color:#355057; }
+.factory-login .ant-input-affix-wrapper { border-radius:8px;padding:11px 13px;background:#fafcfc;border-color:#dce7e8; }
+.factory-login .ant-input-prefix { color:#8caaad;margin-right:11px; }
+.factory-form-options { margin:0 0 24px; }
+.factory-login .ant-checkbox-wrapper { font-size:13px;color:#60777c; }
+.factory-submit.ant-btn { height:47px;border-radius:8px;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 7px 16px #07909525; }
+.factory-password-help { text-align:center;font-size:12px;color:#829397; }
+.factory-password-help span { color:#079095;font-weight:500; }
+.factory-security { display:flex;justify-content:center;align-items:center;gap:8px;color:#91a2a6;border-top:1px solid #edf2f3;margin-top:30px;padding-top:24px;font-size:11px; }
+.factory-panel-footer { text-align:center;color:#a1afb2;font-size:9px;letter-spacing:1.4px;margin-top:50px; }
+@media(max-width:900px) { .factory-login {grid-template-columns:1fr 1fr;} .factory-login-hero {padding:28px;} .factory-login-panel {padding:40px 28px 24px;} .factory-brand {font-size:13px;} .factory-flow>span {font-size:10px;gap:4px;} .factory-hero-footer span:last-child {display:none;} }
+@media(max-width:680px) { .factory-login {grid-template-columns:1fr;} .factory-login-hero {padding:24px;} .factory-hero-content {padding:26px 0 12px;max-width:none;} .factory-hero-content h1 {font-size:32px;margin:14px 0;} .factory-hero-content>p {font-size:13px;margin-bottom:0;} .factory-visual,.factory-hero-footer {display:none;} .factory-login-panel {padding:32px 24px 24px;} .factory-form-mark {display:none;} .factory-form-description {margin-bottom:24px;} .factory-panel-footer {margin-top:32px;} }
+@media(max-height:740px) and (min-width:681px) { .factory-login-hero {padding-top:24px;} .factory-hero-content {padding:24px 0;} .factory-scene {max-height:135px;} .factory-visual {margin-top:20px;} .factory-form-mark {margin-bottom:18px;} .factory-login-panel {padding-top:30px;} .factory-panel-footer {margin-top:24px;} }
+
+.factory-brand-icon,.factory-form-mark { overflow:hidden; border-radius:50%; padding:0; background:transparent; border:0; }
+.factory-brand-icon img,.factory-form-mark img { width:100%; height:100%; object-fit:contain; display:block; border-radius:50%; }

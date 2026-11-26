@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* Shared status language across lists, detail views, dialogs and legends. */
+.ant-tag.mes-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px;
+  border: 1px solid var(--status-border) !important;
+  border-radius: 5px;
+  background: var(--status-bg) !important;
+  color: var(--status-text) !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+}
+.mes-status-success { --status-bg: #edf8f1; --status-text: #21643b; --status-border: #b8ddc5; }
+.mes-status-progress { --status-bg: #edf4ff; --status-text: #245ca6; --status-border: #bdd2f1; }
+.mes-status-waiting { --status-bg: #fff7e8; --status-text: #8a540b; --status-border: #ead09d; }
+.mes-status-neutral { --status-bg: #f0f3f5; --status-text: #52616c; --status-border: #ccd5dc; }
+.mes-status-danger { --status-bg: #fff0f0; --status-text: #a12f36; --status-border: #efbfc2; }
+.mes-status-dot { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: currentColor; }
+
+/* Labels carry hierarchy; entered values retain their normal weight. */
+body .ant-form-item .ant-form-item-label > label,
+body .ant-descriptions .ant-descriptions-item-label,
+body .ant-table-wrapper .ant-table-thead > tr > th {
+  color: #30434b;
+  font-weight: 600;
+}
+
+.workspace-tab-strip {
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--workspace-background);
+  border-bottom: 1px solid var(--workspace-border);
+  padding: 8px 16px 0;
+}
+.workspace-tabs > .ant-tabs-nav { margin-bottom: 0; }
+.workspace-tab-label { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.workspace-tab-label > .anticon { font-size: 15px; margin: 0 !important; }
+.workspace-tabs > .ant-tabs-content-holder { display: none; }
+.workspace-tab-actions { display: flex; align-items: center; gap: 2px; padding: 0 8px; border-left: 1px solid var(--workspace-border); }
+.workspace-tab-actions > .ant-btn { width: 32px; height: 32px; color: var(--workspace-text); }
+.workspace-tab-actions > .workspace-erp-sync { width: auto; margin-right: 8px; }
+@media (max-width: 767px) {
+  .workspace-tab-actions { padding: 0 4px; }
+  .workspace-tab-actions > .workspace-erp-sync { display: none; }
+}
+
+/* Desktop dimensions stay in the components; these overrides apply on small screens. */
+@media (max-width: 767px) {
+  .page-container { padding: 16px !important; }
+  .app-header { padding: 0 8px !important; }
+  .app-header .header-menu-toggle { flex: 0 0 40px !important; }
+  .app-header .header-actions { min-width: 0; gap: 4px !important; }
+  .header-actions > .ant-space-item { flex-shrink: 0; }
+  .header-user-name { display: none; }
+  .product-form-toolbar { flex-wrap: wrap; gap: 12px; }
+  .product-filter-actions { margin-top: 16px; }
+  .login-page {
+    height: auto !important;
+    min-height: 100dvh;
+    flex-direction: column;
+    overflow: auto !important;
+  }
+  .login-brand { flex: none !important; padding: 32px 24px !important; }
+  .login-brand h1 { font-size: 28px !important; }
+  .login-form-panel {
+    flex: 1;
+    width: 100% !important;
+    padding: 32px 24px !important;
+  }
+}
+@media (max-width: 575px) {
+  .product-attribute-row { row-gap: 12px; }
+}
+
+
+html, body, #root { min-height: 100%; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #262626; background: #f5f5f5; }

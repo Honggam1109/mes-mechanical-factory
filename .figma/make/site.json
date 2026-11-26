@@ -1,0 +1,11 @@
+{
+  "title": "MES-Factory",
+  "description": "Prototype hệ thống quản lý sản xuất (MES) cho nhà máy cơ khí.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

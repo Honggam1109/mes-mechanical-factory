@@ -1,0 +1,15 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS migrations (version INTEGER PRIMARY KEY);
+CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, username TEXT NOT NULL COLLATE NOCASE UNIQUE, password_hash TEXT NOT NULL, document TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS roles (id TEXT PRIMARY KEY, code TEXT NOT NULL COLLATE NOCASE UNIQUE, document TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS permissions (id TEXT PRIMARY KEY, code TEXT NOT NULL COLLATE NOCASE UNIQUE, document TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS data_permissions (id TEXT PRIMARY KEY, code TEXT NOT NULL COLLATE NOCASE UNIQUE, document TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS employees (id TEXT PRIMARY KEY, document TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS user_roles (user_id TEXT REFERENCES users(id), role_id TEXT REFERENCES roles(id), PRIMARY KEY(user_id, role_id));
+CREATE TABLE IF NOT EXISTS permission_actions (permission_id TEXT REFERENCES permissions(id), action TEXT NOT NULL, PRIMARY KEY(permission_id, action));
+CREATE TABLE IF NOT EXISTS role_permissions (role_id TEXT REFERENCES roles(id), permission_id TEXT REFERENCES permissions(id), PRIMARY KEY(role_id, permission_id));
+CREATE TABLE IF NOT EXISTS role_permission_actions (role_id TEXT, permission_id TEXT, action TEXT, PRIMARY KEY(role_id, permission_id, action), FOREIGN KEY(role_id, permission_id) REFERENCES role_permissions(role_id, permission_id), FOREIGN KEY(permission_id, action) REFERENCES permission_actions(permission_id, action));
+CREATE TABLE IF NOT EXISTS role_data_permissions (role_id TEXT REFERENCES roles(id), data_permission_id TEXT REFERENCES data_permissions(id), PRIMARY KEY(role_id, data_permission_id));
+CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), expires_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS audit_logs (id TEXT PRIMARY KEY, actor_id TEXT, action TEXT, entity_id TEXT, created_at TEXT NOT NULL);
+INSERT OR IGNORE INTO migrations VALUES (1);
